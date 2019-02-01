@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Animated } from 'react-native';
-//import { API_KEY } from './APIkey';
 import CityInput from './CityInput';
 
 export default class App extends React.Component {
@@ -8,18 +7,12 @@ export default class App extends React.Component {
     temperature: 0,
     weatherCondition: null,
   };
-/* 
-   getCityName(){
-    CityInput.handleCity
-    this.setState(city)
-   } */
 
   componentDidMount() {
        //this.fetchWeather();
       }
     
-  
-  fetchWeather(city='Helsinki', API_KEY = '1c3d54150471778fc70e82e2eb5a64f4') {
+  fetchWeather(city, API_KEY = '1c3d54150471778fc70e82e2eb5a64f4') {
 console.log(city)
     fetch(  `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}&units=metric`
     )
@@ -28,9 +21,7 @@ console.log(city)
         console.log(json)
         this.setState({
           temperature: json.main.temp,
-          weatherCondition: json.weather[0].main,
-        
-          
+          weatherCondition: json.weather[0].main, 
         });
         console.log(temperature)
       });

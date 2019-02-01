@@ -15,7 +15,7 @@ class CityInput extends Component {
          <View style = {styles.container}>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-               placeholder = " Stadi"
+               placeholder = " Enter City Name"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.handleCity}/>
@@ -26,7 +26,6 @@ class CityInput extends Component {
                   () => this.props.onCityEntry(this.state.city)
                }>
                <Text style = {styles.submitButtonText}> Enter </Text>
-              
             </TouchableOpacity>
          </View>
       )
